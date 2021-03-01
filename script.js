@@ -45,5 +45,6 @@ peopleListEl.addEventListener("click", function (event) {
     var selectedIndex = event.target.parentElement.id;
     console.log(selectedIndex);
     console.log(people[selectedIndex]);
+    modalNameEl.textContent = people[selectedIndex].name;
   }
 })
