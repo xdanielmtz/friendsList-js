@@ -25,6 +25,8 @@ function addPersonToList(event) {
 
 function close() {
   modalEl.style.display = "none";
+  descriptionEl.textContent = "";
+  modalNameEl.textContent - "";
 }
 
 function open() {
@@ -41,13 +43,19 @@ addBtn.addEventListener("click", addPersonToList);
 peopleListEl.addEventListener("click", function (event) {
   event.preventDefault();
   if(event.target.matches("button")){
-    open();
+ 
     var selectedIndex = event.target.parentElement.id;
     console.log(selectedIndex);
     console.log(people[selectedIndex]);
     currentId = selectedIndex;
     modalNameEl.textContent = people[selectedIndex].name;
-    descriptionEl.textContent = people[selectedIndex].description;
+    if(people[selectedIndex].description){
+      descriptionEl.value = people[selectedIndex].description;
+    }else{
+      descriptionEl.value = "";
+    }
+   
+    open();
   }
 })
 
