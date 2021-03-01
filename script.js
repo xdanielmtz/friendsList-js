@@ -45,6 +45,13 @@ peopleListEl.addEventListener("click", function (event) {
     var selectedIndex = event.target.parentElement.id;
     console.log(selectedIndex);
     console.log(people[selectedIndex]);
+    currentId = selectedIndex;
     modalNameEl.textContent = people[selectedIndex].name;
+    descriptionEl.textContent = people[selectedIndex].description;
   }
+})
+
+saveBtn.addEventListener("click", function(){
+  people[currentId].description = descriptionEl.value;
+  close();
 })
