@@ -42,5 +42,8 @@ peopleListEl.addEventListener("click", function (event) {
   event.preventDefault();
   if(event.target.matches("button")){
     open();
+    var selectedIndex = event.target.parentElement.id;
+    console.log(selectedIndex);
+    console.log(people[selectedIndex]);
   }
 })
